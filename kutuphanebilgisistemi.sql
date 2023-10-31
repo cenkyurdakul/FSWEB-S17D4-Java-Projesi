@@ -1,3 +1,40 @@
+SELECT * FROM ogrenci
+SELECT ograd, ogrsoyad, sinif FROM ogrenci
+SELECT * FROM ogrenci WHERE cinsiyet='K'
+SELECT DISTINCT sinif FROM ogrenci
+SELECT * FROM ogrenci WHERE cinsiyet='K' AND sinif='10A'
+SELECT ograd, ogrsoyad, sinif FROM ogrenci WHERE sinif N('10A','10B')
+SELECT orgno as 'okul numarası', ograd, ogrsoyad FROM ogrenci
+SELECT CONCAT(ograd, ogrsoyad) as 'adsoyad' FROM ogrenci
+SELECT * FROM ogrenci WHERE ograd LIKE 'A%'
+SELECT kitapadi, sayfasayisi FROM kitap WHERE sayfasayisi >= 50 AND sayfasayisi <= 200
+SELECT * FROM ogrenci WHERE ograd IN ('Fidan', 'İsmail', 'Leyla')
+SELECT * FROM ogrenci WHERE ograd LIKE 'A%' OR ograd LIKE 'D&' OR ograd LIKE 'K%'
+SELECT ograd, ogrsoyad, sinif, cinsiyet FROM ogrenci WHERE (sinif='9A' AND cinsiyet='E') OR (sinif='9B' AND cinsiyet='K')
+SELECT * FROM ogrenci WHERE cinsiyet='E' AND sinif IN('10A', '10B')
+SELECT * FROM ogrenci WHERE dtarih LIKE '1989%'
+SELECT * FROM ogrenci WHERE cinsiyet='K' AND ogrno BETWEEN 30 AND 50
+SELECT * FROM ogrenci ORDER BY ograd ASC
+SELECT * FROM ogrenci ORDER BY ograd, ogrsoyad
+SELECT * FROM ogrenci WHERE sinif = '10A' ORDER BY ogrno DESC
+SELECT * FROM ogrenci LIMIT 10
+SELECT ograd, ogrsoyad, dtarih FROM ogrenci LIMIT 10
+SELECT * FROM kitap ORDER BY sayfasayisi DESC LIMIT 1
+SELECT * FROM ogrenci ORDER BY dtarih DESC LIMIT 1
+SELECT * FROM ogrenci WHERE sinif = '10A' AND dtarih IS NOT NULL ORDER BY dtarih ASC 1
+SELECT * FROM kitap WHERE kitapadi LIKE '_n%'
+SELECT * FROM ogrenci WHERE sinif IS NOT NULL ORDER BY sinif ASC
+SELECT * FROM ogrenci ORDER BY RAND() LIMIT 1
+SELECT ogrno, ograd, ogrsoyad, sinif FROM ogrenci WHERE sinif = '10A' ORDER BY RAND() LIMIT 1
+SELECT COUNT(ograd) AS 'adet', ograd AS 'isim' FROM ogrenci GROUP BY ograd
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
 -- phpMyAdmin SQL Dump
 -- version 4.9.11
 -- https://www.phpmyadmin.net/
